@@ -1,7 +1,11 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿/* Move down content because we have a fixed navbar that is 80px tall */
 body {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 20px;
+}
+
+body {
+    background-color: #555;
 }
 
 /* Wrapping element */
@@ -9,6 +13,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #dedede;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -28,4 +33,33 @@ textarea {
     .body-content {
         padding: 0;
     }
+}
+
+.container-brand {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.brand-centered {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.navbar-fixed-top {
+    position: relative;
+    margin-bottom: 0;
+    right: 0;
+    left: 0;
 }
