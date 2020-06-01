@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Speakcore.Web.Models;
+
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Optimization;
@@ -16,6 +19,13 @@ namespace Speakcore.Web
 			// Code that runs on application startup
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+			using (var context = new SpeakcoreContext())
+			{
+				var dbInitializer = new SpeakcoreDatabaseInitializer();
+				dbInitializer.InitializeDatabase(context);
+				Database.SetInitializer(dbInitializer);
+			}
 		}
 	}
 }

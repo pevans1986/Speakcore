@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Speakcore.Web._Default" %>
+﻿<%@ Page Title="LOGIN" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Speakcore.Web._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="center-block bg-primary">
-        <h3>LOGIN</h3>
+        <h3><%: Title %></h3>
     </div>
 
     <div class="panel panel-default center-block">
@@ -17,14 +17,12 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <label for="Password">Password:</label>
-                        <input type="password" class="form-control" id="Password" placeholder="Password" />
+                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="control-label">Password</asp:Label>
+                        <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                     </div>
                     <div class="form-group">
-                        <%--<div class="col-md-offset-2 col-md-10">--%>
-                            <%--<asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />--%>
-                            <button class="btn btn-default btn-primary pull-right">LOGIN</button>
-                        <%--</div>--%>
+                        <asp:Button runat="server" OnClick="LogIn" Text="Login" CssClass="btn btn-default btn-primary pull-right" />
                     </div>
                 </div>
             </div>
