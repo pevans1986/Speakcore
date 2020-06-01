@@ -38,27 +38,28 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="container container-brand">
-            <div class="navbar navbar-fixed-top">
-                <%--<div class="navbar-header">--%>
-                <div class="container-fluid">
-                    <div class="brand-centered">
-                        <a class="navbar-brand" href="#">
-                            <img src="/Content/Images/Speakcore_Logo_55.png" />
-                        </a>
+        <div class="container-wrapper">
+            <div class="container container-brand">
+                <div class="navbar navbar-fixed-top">
+                    <%--<div class="navbar-header">--%>
+                    <div class="container-fluid">
+                        <div class="brand-centered">
+                            <a class="navbar-brand" href="#">
+                                <img src="/Content/Images/Speakcore_Logo_55.png" / class="img-responsive">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <hr />
+                <footer>
+                    <%--<p>Paul Evans</p>--%>
+                </footer>
+            </div>
         </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>Paul Evans</p>
-            </footer>
-        </div>
-
     </form>
 </body>
 </html>
