@@ -1,25 +1,29 @@
-﻿using Speakcore.Web.Models;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
+
+using Speakcore.Web.Models;
 
 namespace Speakcore.Web
 {
 	public class Global : HttpApplication
 	{
-		void Application_Start(object sender, EventArgs e)
+		#region Methods
+
+		private void Application_Start(object sender, EventArgs e)
 		{
-			// Code that runs on application startup
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+			InitializeDb();
+		}
+
+		private void InitializeDb()
+		{
 			using (var context = new SpeakcoreContext())
 			{
 				var dbInitializer = new SpeakcoreDatabaseInitializer();
@@ -27,5 +31,7 @@ namespace Speakcore.Web
 				Database.SetInitializer(dbInitializer);
 			}
 		}
+
+		#endregion Methods
 	}
 }

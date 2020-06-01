@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Speakcore.Web
 {
 	public partial class _Default : Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-
-		}
+		#region Methods
 
 		protected void LogIn(object sender, EventArgs e)
 		{
 			if (string.Equals(Password.Text, "asdf", StringComparison.Ordinal))
 			{
-				Response.Redirect("/Register", endResponse: true);
+				Response.Redirect($"/{Routes.Registration}", endResponse: true);
 			}
 			else
 			{
@@ -26,5 +21,11 @@ namespace Speakcore.Web
 				ErrorMessage.Visible = true;
 			}
 		}
+
+		protected void Page_Load(object sender, EventArgs e)
+		{
+		}
+
+		#endregion Methods
 	}
 }
